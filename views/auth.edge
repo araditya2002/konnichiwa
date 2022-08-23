@@ -1,0 +1,53 @@
+@layout("layouts.basic")
+
+@section("styles")
+
+<link rel = "stylesheet" href = "/css/auth.css"/>
+
+
+@endsection
+
+@section("content")
+<div class = "container">
+  <div class="form-structor">
+    <div class="signup">
+      <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+      <form action = "/auth/register" method = "post">
+        <div class="form-holder">
+          <input name = "name" type="text" required="required" class="input" placeholder="Name" />
+          <input name = "admn" type="text" required="required" class="input" placeholder="User ID" />
+          <input name = "password" type="password" required="required" class="input" placeholder="Password" />
+          <input name = "repass" type="password" required="required" class="input" placeholder="Re-enter Password" />
+        </div>
+        <button type="submit" class="submit-btn">Sign up</button>
+      </form>
+    </div>
+    <div class="login slide-up">
+      <div class="center">
+        <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+        <form action = "/auth/login" method = "post">
+          <div class="form-holder">
+            <input name = "admn" type="text" required="required" class="input" placeholder="User ID" />
+            <input name = "password" type="password" required="required" class="input" placeholder="Password" />
+          </div>
+          <button type = "submit" class="submit-btn">Log in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@endsection
+
+@section("scripts")
+<div id = "main-error">
+  <center>
+    <div class = "error-inner">
+    <div id = "error-container">A random error occurred. Please try after some time or report to the webmaster.</div>
+    <button>OK</button>
+    </div>
+  </center>
+</div>
+<script src = "/js/auth.js"></script>
+
+@endsection
